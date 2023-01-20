@@ -1,0 +1,55 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Signup</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+</head>
+<body>
+    <div class="myparallax">
+    <div class="container text-center mb-2" style="padding-top: 230px;">
+        <h1 class="container text-center mb-2" >SignUp Form</h1>
+        <h3>{{message}}</h3>
+        <form method="post">
+            {% csrf_token %}
+            <p>Username: <br>{{ form.username }} </p>
+            <p>Password: <br>{{ form.password1 }} </p>
+            <p>Password Confirmation: <br>{{ form.password2 }} </p>
+            <div class="d-flex justify-content-center mx-4 mb-2 mb-lg-4">
+            <button type="Submit" class="btn btn-primary" >Submit</button>
+            </div>
+            <p class="mb-5 pb-lg-2" style="color:black">Already have an account?<a href="loginuser" style="color:rgb(55, 43, 226); margin-left: 5px;">Sign in 
+
+            <!-- <a href="% url 'home' %" style="color:aquamarine">home</a> -->
+            </a></p>
+
+            <!-- <button type="Login" class="btn btn-primary">Login</button> -->
+        </form>   
+    </div>
+    </div>
+    <style>
+    .myparallax {
+        /* The image used */
+        background-image: url("{% static 'mriic/im8.jpg' %}");
+      
+        /* Set a specific height */
+        min-height: 753px;
+      
+        /* Create the parallax scrolling effect */
+        background-attachment: fixed;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+      }
+      /* @media only screen and (max-device-height:400px) {
+      .myparallax {
+          background-attachment: scroll;
+        
+      }
+      } */
+    </style> 
+</body>
+</html>
